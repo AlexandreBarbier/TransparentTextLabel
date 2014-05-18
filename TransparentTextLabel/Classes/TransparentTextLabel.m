@@ -16,7 +16,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
     }
     return self;
 }
@@ -36,8 +35,8 @@
     CGContextSetBlendMode(context, kCGBlendModeCopy);
     // set text inset if needed
     UIEdgeInsets insets = {0, 0, 0, 0};
-    if (self.inset.left) {
-        insets = self.inset;
+    if (self.textInset.left) {
+        insets = self.textInset;
     }
     // draw text
     [super drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];

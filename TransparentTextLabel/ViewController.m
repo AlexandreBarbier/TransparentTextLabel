@@ -40,20 +40,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     // here we have to put a backround to our label if we want to see the text
-  //  self.firstLabel.backgroundColor = [UIColor whiteColor];
+    // self.firstLabel.backgroundColor = [UIColor whiteColor];
     self.secondLabel.backgroundColor = [UIColor blackColor];
+    
     // bacground layer initialisation
     _bgLayer = [[CAGradientLayer alloc] init];
     self.bgLayer.frame = [[UIScreen mainScreen] bounds];
     self.bgLayer.name = @"colorGradient";
+    
     // first color end at the middle of the screen
     [self.bgLayer setStartPoint:CGPointMake(1, 0.5)];
     [self.bgLayer setEndPoint:CGPointMake(1, 1)];
+    
     // gradient colors initialisation
     self.gradientColors = @[@[(id)[UIColor redColor].CGColor, (id)[UIColor yellowColor].CGColor], @[(id)[UIColor purpleColor].CGColor, (id)[UIColor blueColor].CGColor]];
+    
     // insert our background layer in the layer's view
     [self.view.layer insertSublayer:self.bgLayer atIndex:0];
+    
     // add timer to change the background every 3 seconds
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(changeBackground) userInfo:nil repeats:YES];
     [timer fire];

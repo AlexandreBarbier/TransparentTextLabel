@@ -12,5 +12,5 @@
 /**
  *  inset of the text use it if you want a particular inset for the text in the label
  */
-@property (nonatomic, assign) UIEdgeInsets inset;
+@property (nonatomic, assign) UIEdgeInsets textInset;
 @end
