@@ -21,7 +21,7 @@
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
-    // we have to override the background color to add alpha component
+    // we have to override the background color to add alpha component because if alpha = 1.0 the compiler set the view opaque
     [super setBackgroundColor:[backgroundColor colorWithAlphaComponent:.99]];
 
 }
